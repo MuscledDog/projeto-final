@@ -1,0 +1,83 @@
+.site-header {
+  background: linear-gradient(135deg, #0a0f1c, #1c2b3a);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.logo span {
+  position: relative;
+  display: inline-block;
+  animation: glowPulse 10s infinite;
+}
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 0px rgba(0, 255, 255, 0);
+  }
+  5% {
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8),
+                 0 0 15px rgba(0, 255, 255, 0.6),
+                 0 0 25px rgba(0, 255, 255, 0.4);
+  }
+  10% {
+    text-shadow: 0 0 0px rgba(0, 255, 255, 0);
+  }
+  100% {
+    text-shadow: 0 0 0px rgba(0, 255, 255, 0);
+  }
+}
+
+
+
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #00bfff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+  letter-spacing: 1px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: #88cfff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffff;
+}
+
+.nav-menu a.active {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  font-weight: 600;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-menu {
+    gap: 1.2rem;
+  }
+}
