@@ -1,0 +1,49 @@
+.sobre-section {
+  min-height: calc(100vh - 120px);
+  background: linear-gradient(135deg, #0a0f1c, #1c2b3a);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 2rem;
+  color: #cceeff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.sobre-container {
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+}
+
+.sobre-container h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  color: #00bfff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+}
+
+.sobre-container p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  color: #a8d8ff;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sobre-container {
+    padding: 1.8rem;
+  }
+
+  .sobre-container h1 {
+    font-size: 2rem;
+  }
+
+  .sobre-container p {
+    font-size: 1rem;
+  }
+}
