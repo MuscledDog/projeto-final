@@ -14,6 +14,43 @@
   align-items: center;
 }
 
+ .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(30, 41, 59, 0.85); /* Azul escuro semi-transparente */
+  backdrop-filter: blur(5px); /* Efeito de vidro fosco */
+  min-width: 220px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  list-style: none;
+  padding: 10px 0;
+  border-radius: 4px;
+}
+
+/* Mostrar ao passar o rato */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.dropdown-content li a:hover {
+  background-color: rgba(59, 130, 246, 0.5); /* Azul mais claro ao passar o rato */
+}
+
+
 .logo span {
   font-size: 1.4rem;
   font-weight: 600;
