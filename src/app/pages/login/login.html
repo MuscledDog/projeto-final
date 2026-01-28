@@ -1,20 +1,23 @@
 <section class="login-section">
   <div class="login-container">
     <h1>Autenticação</h1>
-    <button class="login-btn2"> Limpar campos</button>
+    <!-- Botão de reset dos campos-->
+    <button (click)="this.signinforms.reset()" class="login-btn2"> Limpar campos</button>
+
     <p></p>
-    <form class="login-form">
+    <form class="login-form" [formGroup]="signinforms">
       <div class="form-group">
         <label for="email">Email</label>
-        <input id="email" type="email" placeholder="Introduza o seu email">
+        <input id="email" name="email" type="email" placeholder="Introduza o seu email" formControlName="email">
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
-        <input id="password" type="password" placeholder="Introduza a sua password">
+        <input id="password" name="password" type="password" placeholder="Introduza a sua password" formControlName="password">
       </div>
 
       <button type="submit" class="login-btn">Entrar</button>
-    </form>
+      </form>
+
   </div>
 </section>
