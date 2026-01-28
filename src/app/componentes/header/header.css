@@ -1,3 +1,55 @@
+/* Container do menu */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Submenu parent */
+.submenu-parent {
+  position: relative;
+}
+
+/* Submenu escondido */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: none;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  min-width: 220px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: .75s ease;
+  z-index: 999;
+}
+
+/* Mostrar submenu ao passar o rato */
+.submenu-parent:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Estilo dos links do submenu */
+.submenu li a {
+  display: block;
+  padding: 0.7rem 1rem;
+  color: #88cfff;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  background: solid rgba(13, 238, 238, 0.2);
+}
+
+
 .site-header {
   background: linear-gradient(135deg, #0a0f1c, #1c2b3a);
   padding: 1rem 2rem;
@@ -51,31 +103,47 @@
 }
 
 
+.logo {
+  position: relative;
+  display: inline-block;
+}
+
+
 .logo span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #00ffff; /* cursor ciano */
   font-size: 1.4rem;
   font-weight: 600;
   color: #00bfff;
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
   letter-spacing: 1px;
-  animation: glowPulse 10s infinite;
+
+  /* animação */
+  animation: typing 2.2s steps(25, end), blinkCursor 0.7s step-end infinite, hide-caret 0s 8s forwards;
 }
 
-@keyframes glowPulse {
-  0% {
-    text-shadow: 0 0 0px rgba(0, 255, 255, 0);
-  }
-  5% {
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8),
-                 0 0 15px rgba(0, 255, 255, 0.6),
-                 0 0 25px rgba(0, 255, 255, 0.4);
-  }
-  10% {
-    text-shadow: 0 0 0px rgba(0, 255, 255, 0);
-  }
-  100% {
-    text-shadow: 0 0 0px rgba(0, 255, 255, 0);
-  }
+/* efeito de escrita */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
 }
+
+/* cursor a piscar */
+@keyframes blinkCursor {
+  0% { border-color: #00ffff; }
+  50% { border-color: transparent; }
+  100% { border-color: #00ffff; }
+}
+
+  /* ao fim do delay, remove a borda */
+@keyframes hide-caret {
+  to { border-right: 0 solid transparent; }
+}
+
+
+
+
 
 .nav-menu {
   display: flex;

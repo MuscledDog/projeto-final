@@ -5,9 +5,23 @@
     </div>
 
     <nav class="nav-menu">
+
       <a routerLink="/welcome" routerLinkActive="active">Home</a>
-      <a routerLink="/sobre" >Do Digital ao Real</a>
-      <a routerLink="/login" >Login</a>
+
+      <!-- Submenu -->
+      <div class="submenu-parent">
+        <a routerLink="/sobre">Do Digital ao Real</a>
+
+        <ul class="submenu">
+          <li><a href="/sobre#escultura">Escultura Digital</a></li>
+          <li><a href="/sobre#ecosistema">Ecossistema</a></li>
+          <li><a href="/sobre#slicing">Slicing e Materialização</a></li>
+          <li><a href="/sobre#acabamento">Acabamento e Arte</a></li>
+        </ul>
+      </div>
+
+      <a routerLink="/login">Login</a>
+
     </nav>
   </div>
 </header>
