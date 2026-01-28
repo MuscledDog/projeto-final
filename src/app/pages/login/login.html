@@ -5,19 +5,54 @@
     <button (click)="this.signinforms.reset()" class="login-btn2"> Limpar campos</button>
 
     <p></p>
-    <form class="login-form" [formGroup]="signinforms">
+    <div class="login-form" [formGroup]="signinforms">
       <div class="form-group">
         <label for="email">Email</label>
         <input id="email" name="email" type="email" placeholder="Introduza o seu email" formControlName="email">
+        @if (this.signinforms.invalid && this.signinforms.get('email')?.touched) {
+
+          @if (this.signinforms.hasError('required',"email")) {
+            <div class="error-message">
+            <small> *Campo Obrigatório</small>
+          </div>
+          }
+          @if (this.signinforms.getError("email","email")) {
+            <div class="error-message">
+          <small>**Erro no e-mail</small>
+         </div>
+          }
+        }
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
         <input id="password" name="password" type="password" placeholder="Introduza a sua password" formControlName="password">
-      </div>
+@if (this.signinforms.invalid && this.signinforms.get('email')?.touched) {
 
-      <button type="submit" class="login-btn">Entrar</button>
-      </form>
+          @if (this.signinforms.hasError('required',"password")) {
+            <div class="error-message">
+            <small> *Campo Obrigatório</small>
+          </div>
+          }
+          @if (this.signinforms.hasError("minlength","password")) {
+            <div class="error-message">
+          <small>Password deve ter no mínimo 3 caracteres</small>
+         </div>
+          }
+          @if (this.signinforms.get("password")?.getError("maxlength")) {
+          <div class="error-message">
+          <small>Máximo de 16 caracteres</small>
+         </div>
+
+          }
+
+        }
+
+
+
+      </div>
+     <button type="submit" class="login-btn">Entrar</button>
+
 
   </div>
-</section>
+

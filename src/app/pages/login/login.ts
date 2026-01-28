@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -15,13 +15,20 @@ export class Login {
 
   constructor(private fb: UntypedFormBuilder) {
     this.signinforms = this.fb.nonNullable.group({
-      email: [''],
-      password: [''],
+      email: ['',[Validators.required, Validators.email]],
+      password: ['',[Validators.required, Validators.minLength(3), Validators.maxLength(16)]],
     });
-
-
-
    }
+
+onSubmit(){
+ // this.signinforms.get('email')?.getError('required');
+
+
+  console.log("Meu forms", this.signinforms.controls['email'].value)
+
+  console.log("Meu forms", this.signinforms.value )
+
+}
 
 }
 

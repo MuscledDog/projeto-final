@@ -70,6 +70,24 @@
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+.error-message {
+  margin-top: -0.5rem;
+  width: 98%;
+  color: var(--secondary-color);
+  background-color: var(--background-color-error);
+  padding: 0.3rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  border-left: 3px, solid var(--secondary-color);
+
+}
+
+.error-message::before {
+  /* content: "⚠"; */
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
 .form-group input:focus {
   border-color: #00ffff;
   box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
