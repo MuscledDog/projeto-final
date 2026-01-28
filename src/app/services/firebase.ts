@@ -1,5 +1,7 @@
+import { key } from "./key";
+
 export const firebaseConfig = {
-  apiKey: "AIzaSyB-PK6w1MNMCJoidSSmub16dg6ACt_mCI8",
+  apiKey: key,
   authDomain: "projeto-final-00604.firebaseapp.com",
   projectId: "projeto-final-00604",
   storageBucket: "projeto-final-00604.firebasestorage.app",
