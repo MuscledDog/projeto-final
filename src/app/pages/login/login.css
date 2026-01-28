@@ -7,6 +7,23 @@
   padding: 3rem 1.5rem;
   font-family: 'Segoe UI', sans-serif;
 }
+.login-btn2 {
+  width: 25%;
+  padding: 0.4rem;
+  background: #00bfff;
+  border: none;
+  border-radius: 6px;
+  color: #0a0f1c;
+  font-size: 0.8rem;
+  font-weight: 200;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.login-btn2:hover {
+  background: #00ffff;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+}
 
 .login-container {
   width: 100%;
